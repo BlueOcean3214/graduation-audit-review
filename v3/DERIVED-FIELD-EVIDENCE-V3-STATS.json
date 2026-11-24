@@ -1,0 +1,629 @@
+{
+  "schema": "graduation-derived-field-evidence/v3",
+  "builder_version": "3.0.0",
+  "rule_version": "1.0.0",
+  "baseline": {
+    "snapshot_repository": "https://github.com/BlueOcean3214/graduation-preflight-audit",
+    "snapshot_commit": "7b99ad96db78167c490874af9c4b48484b6d6ef0",
+    "reviewed_source_repository": "https://github.com/BlueOcean3214/AI-Study-Assistant",
+    "reviewed_source_commit": "df155a5c145297bc5e6a085636fadfd6185586bd",
+    "runtime_source_version_verified": false,
+    "execution_report_baseline": "e5f97e9fd9d721af24ed5d7a6c047ff305fd3fcd",
+    "execution_report_baseline_is_proof": false
+  },
+  "records": {
+    "total": 165,
+    "by_segment": {
+      "main": 140,
+      "supplementary-subject": 10,
+      "supplementary-s7empty": 5,
+      "b0-legacy": 10
+    },
+    "audit_locator_unique": 165,
+    "identity_unique": 165,
+    "records_with_seven_fields": 0
+  },
+  "field_state_distribution": {
+    "run_id": {
+      "unrecoverable": 165
+    },
+    "base_sha": {
+      "unrecoverable": 165
+    },
+    "knowledge_result_ids": {
+      "externally_derived": 165
+    },
+    "memory_injected": {
+      "externally_derived": 85,
+      "partially_derived": 80
+    },
+    "short_term_injected": {
+      "externally_derived": 165
+    },
+    "difficult_flag": {
+      "externally_derived": 165
+    },
+    "data_kind": {
+      "externally_derived": 165
+    }
+  },
+  "field_verification_distribution": {
+    "run_id": {
+      "not_possible": 165
+    },
+    "base_sha": {
+      "not_possible": 165
+    },
+    "knowledge_result_ids": {
+      "partially_verified": 10,
+      "verified": 155
+    },
+    "memory_injected": {
+      "partially_verified": 165
+    },
+    "short_term_injected": {
+      "partially_verified": 165
+    },
+    "difficult_flag": {
+      "verified": 165
+    },
+    "data_kind": {
+      "partially_verified": 165
+    }
+  },
+  "memory": {
+    "records_with_entries": 80,
+    "entries_total": 170,
+    "gold_status_counts": {
+      "active": 170
+    },
+    "runtime_status_counts": {
+      "inferred_active": 170
+    },
+    "runtime_verification_counts": {
+      "not_verified": 170
+    },
+    "subject_label_exact_matches": 160,
+    "subject_key_matches": 0,
+    "subject_key_resolved": 170,
+    "subject_display_mismatches": 10,
+    "subject_display_mismatch_details": [
+      {
+        "audit_locator": "runs/main-20261113T061051Z/results.jsonl:101",
+        "index": 1,
+        "prompt_subject": "中等",
+        "gold_subject_label": "medium",
+        "gold_subject_key": "medium",
+        "content": "初步观察：中等 任务近期 5 次实际用时约为预估的 2.2 倍"
+      },
+      {
+        "audit_locator": "runs/main-20261113T061051Z/results.jsonl:102",
+        "index": 1,
+        "prompt_subject": "中等",
+        "gold_subject_label": "medium",
+        "gold_subject_key": "medium",
+        "content": "初步观察：中等 任务近期 5 次实际用时约为预估的 2.2 倍"
+      },
+      {
+        "audit_locator": "runs/main-20261113T061051Z/results.jsonl:105",
+        "index": 1,
+        "prompt_subject": "中等",
+        "gold_subject_label": "medium",
+        "gold_subject_key": "medium",
+        "content": "初步观察：中等 任务近期 5 次实际用时约为预估的 2.2 倍"
+      },
+      {
+        "audit_locator": "runs/main-20261113T061051Z/results.jsonl:106",
+        "index": 1,
+        "prompt_subject": "中等",
+        "gold_subject_label": "medium",
+        "gold_subject_key": "medium",
+        "content": "初步观察：中等 任务近期 5 次实际用时约为预估的 2.2 倍"
+      },
+      {
+        "audit_locator": "runs/main-20261113T061051Z/results.jsonl:110",
+        "index": 1,
+        "prompt_subject": "中等",
+        "gold_subject_label": "medium",
+        "gold_subject_key": "medium",
+        "content": "初步观察：中等 任务近期 5 次实际用时约为预估的 2.2 倍"
+      },
+      {
+        "audit_locator": "runs/main-20261113T061051Z/results.jsonl:111",
+        "index": 1,
+        "prompt_subject": "中等",
+        "gold_subject_label": "medium",
+        "gold_subject_key": "medium",
+        "content": "初步观察：中等 任务近期 5 次实际用时约为预估的 2.2 倍"
+      },
+      {
+        "audit_locator": "runs/main-20261113T061051Z/results.jsonl:113",
+        "index": 1,
+        "prompt_subject": "中等",
+        "gold_subject_label": "medium",
+        "gold_subject_key": "medium",
+        "content": "初步观察：中等 任务近期 5 次实际用时约为预估的 2.2 倍"
+      },
+      {
+        "audit_locator": "runs/main-20261113T061051Z/results.jsonl:116",
+        "index": 1,
+        "prompt_subject": "中等",
+        "gold_subject_label": "medium",
+        "gold_subject_key": "medium",
+        "content": "初步观察：中等 任务近期 5 次实际用时约为预估的 2.2 倍"
+      },
+      {
+        "audit_locator": "runs/main-20261113T061051Z/results.jsonl:118",
+        "index": 1,
+        "prompt_subject": "中等",
+        "gold_subject_label": "medium",
+        "gold_subject_key": "medium",
+        "content": "初步观察：中等 任务近期 5 次实际用时约为预估的 2.2 倍"
+      },
+      {
+        "audit_locator": "runs/main-20261113T061051Z/results.jsonl:119",
+        "index": 1,
+        "prompt_subject": "中等",
+        "gold_subject_label": "medium",
+        "gold_subject_key": "medium",
+        "content": "初步观察：中等 任务近期 5 次实际用时约为预估的 2.2 倍"
+      }
+    ],
+    "type_matches": 170,
+    "strength_matches": 170,
+    "subfield_state_distribution": {
+      "content": {
+        "externally_derived": 170
+      },
+      "memory_type": {
+        "externally_derived": 170
+      },
+      "subject_key": {
+        "externally_derived": 170
+      },
+      "strength": {
+        "externally_derived": 170
+      },
+      "gold_status": {
+        "gold_reference": 170
+      },
+      "memory_id": {
+        "unrecoverable": 170
+      },
+      "runtime_status": {
+        "inferred": 170
+      }
+    },
+    "section_5_6_6_status": "NOT_COMPLETED",
+    "section_5_6_6_reason": "no injected.json; runtime base_sha unrecoverable; prompt omits status",
+    "injected_json_reference_present": false
+  },
+  "short_term": {
+    "predicates": {
+      "short_term_slot_enabled_true": 80,
+      "short_term_block_present_true": 80,
+      "short_term_feedback_history_present_true": 75
+    },
+    "legacy_v2_name": "short_term_payload_nonempty",
+    "legacy_v2_count": 75,
+    "by_segment": {
+      "main": {
+        "slot_enabled_true": 70,
+        "block_present_true": 70,
+        "feedback_history_present_true": 70
+      },
+      "supplementary-subject": {
+        "slot_enabled_true": 5,
+        "block_present_true": 5,
+        "feedback_history_present_true": 5
+      },
+      "supplementary-s7empty": {
+        "slot_enabled_true": 5,
+        "block_present_true": 5,
+        "feedback_history_present_true": 0
+      },
+      "b0-legacy": {
+        "slot_enabled_true": 0,
+        "block_present_true": 0,
+        "feedback_history_present_true": 0
+      }
+    },
+    "s7empty_d_records": [
+      {
+        "audit_locator": "runs/suppl-s7empty-20261113T062822Z/results.jsonl:1",
+        "sample_id": "S7-empty",
+        "group": "D",
+        "slot_enabled": true,
+        "block_present": true,
+        "feedback_history_present": false,
+        "feedback_count": 0,
+        "plan_present": true
+      },
+      {
+        "audit_locator": "runs/suppl-s7empty-20261113T062822Z/results.jsonl:2",
+        "sample_id": "S7-empty",
+        "group": "D",
+        "slot_enabled": true,
+        "block_present": true,
+        "feedback_history_present": false,
+        "feedback_count": 0,
+        "plan_present": true
+      },
+      {
+        "audit_locator": "runs/suppl-s7empty-20261113T062822Z/results.jsonl:3",
+        "sample_id": "S7-empty",
+        "group": "D",
+        "slot_enabled": true,
+        "block_present": true,
+        "feedback_history_present": false,
+        "feedback_count": 0,
+        "plan_present": true
+      },
+      {
+        "audit_locator": "runs/suppl-s7empty-20261113T062822Z/results.jsonl:4",
+        "sample_id": "S7-empty",
+        "group": "D",
+        "slot_enabled": true,
+        "block_present": true,
+        "feedback_history_present": false,
+        "feedback_count": 0,
+        "plan_present": true
+      },
+      {
+        "audit_locator": "runs/suppl-s7empty-20261113T062822Z/results.jsonl:5",
+        "sample_id": "S7-empty",
+        "group": "D",
+        "slot_enabled": true,
+        "block_present": true,
+        "feedback_history_present": false,
+        "feedback_count": 0,
+        "plan_present": true
+      }
+    ],
+    "original_boolean_semantics_decision": "pending_advisor_confirmation"
+  },
+  "difficult": {
+    "true_total": 10,
+    "by_segment": {
+      "main": 10,
+      "supplementary-subject": 0,
+      "supplementary-s7empty": 0,
+      "b0-legacy": 0
+    },
+    "b0_raw_condition_true_but_value_false": 5
+  },
+  "knowledge": {
+    "empty_list_total": 165,
+    "b0_prompt_only_total": 10,
+    "scope": "empty_configuration_only"
+  },
+  "data_kind": {
+    "counts": {
+      "simulated_learner_fixture": 165
+    }
+  },
+  "b0_mapping": {
+    "b0_map_expected_total": 10,
+    "b0_map_rows": 10,
+    "b0_map_unique_keys": 10,
+    "b0_map_record_count": 10,
+    "b0_map_matched": 10,
+    "b0_map_sample_matches": 10,
+    "b0_map_experiment_matches": 10,
+    "b0_map_repeat_matches": 10,
+    "b0_map_run_dir_matches": 10,
+    "b0_map_ordinal_matches": 10,
+    "b0_map_legacy_key_collisions": 4,
+    "b0_map_errors": [],
+    "b0_map_all": true
+  },
+  "segments": {
+    "main": {
+      "records": 140,
+      "field_states": {
+        "run_id": {
+          "unrecoverable": 140
+        },
+        "base_sha": {
+          "unrecoverable": 140
+        },
+        "knowledge_result_ids": {
+          "externally_derived": 140
+        },
+        "memory_injected": {
+          "partially_derived": 70,
+          "externally_derived": 70
+        },
+        "short_term_injected": {
+          "externally_derived": 140
+        },
+        "difficult_flag": {
+          "externally_derived": 140
+        },
+        "data_kind": {
+          "externally_derived": 140
+        }
+      },
+      "memory_entries": 150,
+      "memory_records": 70,
+      "short": {
+        "slot_enabled_true": 70,
+        "block_present_true": 70,
+        "feedback_history_present_true": 70
+      },
+      "difficult_true": 10
+    },
+    "supplementary-subject": {
+      "records": 10,
+      "field_states": {
+        "run_id": {
+          "unrecoverable": 10
+        },
+        "base_sha": {
+          "unrecoverable": 10
+        },
+        "knowledge_result_ids": {
+          "externally_derived": 10
+        },
+        "memory_injected": {
+          "partially_derived": 10
+        },
+        "short_term_injected": {
+          "externally_derived": 10
+        },
+        "difficult_flag": {
+          "externally_derived": 10
+        },
+        "data_kind": {
+          "externally_derived": 10
+        }
+      },
+      "memory_entries": 20,
+      "memory_records": 10,
+      "short": {
+        "slot_enabled_true": 5,
+        "block_present_true": 5,
+        "feedback_history_present_true": 5
+      },
+      "difficult_true": 0
+    },
+    "supplementary-s7empty": {
+      "records": 5,
+      "field_states": {
+        "run_id": {
+          "unrecoverable": 5
+        },
+        "base_sha": {
+          "unrecoverable": 5
+        },
+        "knowledge_result_ids": {
+          "externally_derived": 5
+        },
+        "memory_injected": {
+          "externally_derived": 5
+        },
+        "short_term_injected": {
+          "externally_derived": 5
+        },
+        "difficult_flag": {
+          "externally_derived": 5
+        },
+        "data_kind": {
+          "externally_derived": 5
+        }
+      },
+      "memory_entries": 0,
+      "memory_records": 0,
+      "short": {
+        "slot_enabled_true": 5,
+        "block_present_true": 5,
+        "feedback_history_present_true": 0
+      },
+      "difficult_true": 0
+    },
+    "b0-legacy": {
+      "records": 10,
+      "field_states": {
+        "run_id": {
+          "unrecoverable": 10
+        },
+        "base_sha": {
+          "unrecoverable": 10
+        },
+        "knowledge_result_ids": {
+          "externally_derived": 10
+        },
+        "memory_injected": {
+          "externally_derived": 10
+        },
+        "short_term_injected": {
+          "externally_derived": 10
+        },
+        "difficult_flag": {
+          "externally_derived": 10
+        },
+        "data_kind": {
+          "externally_derived": 10
+        }
+      },
+      "memory_entries": 0,
+      "memory_records": 0,
+      "short": {
+        "slot_enabled_true": 0,
+        "block_present_true": 0,
+        "feedback_history_present_true": 0
+      },
+      "difficult_true": 0
+    }
+  },
+  "dual_acceptance": {
+    "original_contract_compliance": {
+      "status": "FAIL",
+      "records_with_all_seven": 0,
+      "reason": "原始记录没有七字段；外置证据层不能改变原始契约结论。"
+    },
+    "evidence_layer_integrity": {
+      "status": "PASS",
+      "records_validated": 165,
+      "checks": {
+        "record_count_165": true,
+        "segment_counts": true,
+        "audit_locator_unique_165": true,
+        "identity_unique_165": true,
+        "strict_json_all": true,
+        "run_id_unrecoverable_165": true,
+        "base_sha_unrecoverable_165": true,
+        "memory_entries_170": true,
+        "memory_records_80": true,
+        "gold_status_active_170": true,
+        "runtime_inferred_active_170": true,
+        "runtime_unknown_0": true,
+        "runtime_not_verified_170": true,
+        "subject_label_exact_160": true,
+        "subject_key_matches_0": true,
+        "subject_key_resolved_170": true,
+        "subject_display_mismatches_10": true,
+        "short_slot_80": true,
+        "short_block_80": true,
+        "short_feedback_history_75": true,
+        "short_s7empty_5": true,
+        "difficult_true_10": true,
+        "knowledge_empty_165": true,
+        "b0_prompt_only_10": true,
+        "data_kind_165": true,
+        "original_seven_absent_165": true,
+        "v2_record_count_match": true,
+        "v2_locator_set_match": true,
+        "v2_identity_set_match": true
+      }
+    }
+  },
+  "integrity": {
+    "record_count_165": true,
+    "segment_counts": true,
+    "audit_locator_unique_165": true,
+    "identity_unique_165": true,
+    "strict_json_all": true,
+    "run_id_unrecoverable_165": true,
+    "base_sha_unrecoverable_165": true,
+    "memory_entries_170": true,
+    "memory_records_80": true,
+    "gold_status_active_170": true,
+    "runtime_inferred_active_170": true,
+    "runtime_unknown_0": true,
+    "runtime_not_verified_170": true,
+    "subject_label_exact_160": true,
+    "subject_key_matches_0": true,
+    "subject_key_resolved_170": true,
+    "subject_display_mismatches_10": true,
+    "short_slot_80": true,
+    "short_block_80": true,
+    "short_feedback_history_75": true,
+    "short_s7empty_5": true,
+    "difficult_true_10": true,
+    "knowledge_empty_165": true,
+    "b0_prompt_only_10": true,
+    "data_kind_165": true,
+    "original_seven_absent_165": true,
+    "v2_record_count_match": true,
+    "v2_locator_set_match": true,
+    "v2_identity_set_match": true
+  },
+  "errors": [],
+  "v2_comparison": {
+    "available": true,
+    "v2_schema": "graduation-derived-field-evidence/v2",
+    "v2_builder_version": "2.0.0",
+    "record_count_match": true,
+    "locator_set_match": true,
+    "identity_set_match": true,
+    "v2_field_states": {
+      "run_id": {
+        "unrecoverable": 165
+      },
+      "base_sha": {
+        "unrecoverable": 165
+      },
+      "knowledge_result_ids": {
+        "externally_derived": 165
+      },
+      "memory_injected": {
+        "externally_derived": 85,
+        "partially_derived": 80
+      },
+      "short_term_injected": {
+        "externally_derived": 165
+      },
+      "difficult_flag": {
+        "externally_derived": 165
+      },
+      "data_kind": {
+        "externally_derived": 165
+      }
+    },
+    "v3_field_states": {
+      "run_id": {
+        "unrecoverable": 165
+      },
+      "base_sha": {
+        "unrecoverable": 165
+      },
+      "knowledge_result_ids": {
+        "externally_derived": 165
+      },
+      "memory_injected": {
+        "externally_derived": 85,
+        "partially_derived": 80
+      },
+      "short_term_injected": {
+        "externally_derived": 165
+      },
+      "difficult_flag": {
+        "externally_derived": 165
+      },
+      "data_kind": {
+        "externally_derived": 165
+      }
+    },
+    "short_predicate_counts": {
+      "v2": {
+        "short_term_slot_enabled_true": 80,
+        "short_term_block_present_true": 80,
+        "short_term_payload_nonempty_true": 75
+      },
+      "v3": {
+        "short_term_slot_enabled_true": 80,
+        "short_term_block_present_true": 80,
+        "short_term_feedback_history_present_true": 75
+      }
+    },
+    "memory_statistics": {
+      "v2_gold_status_reference_counts": {
+        "active": 170
+      },
+      "v2_runtime_status": {
+        "inferred_active": 170,
+        "unknown": 0
+      },
+      "v2_subject_label_matches": 160,
+      "v3": {
+        "gold_status_counts": {
+          "active": 170
+        },
+        "runtime_status_counts": {
+          "inferred_active": 170
+        },
+        "subject_label_exact_matches": 160,
+        "subject_key_matches": 0,
+        "subject_display_mismatches": 10
+      }
+    },
+    "intentional_differences": [
+      "V3 renames short_term_payload_nonempty to short_term_feedback_history_present; value count stays 75.",
+      "V3 recomputes Gold status from gold_reference subfields; V2's gold_status_reference_counts was populated from runtime inferred count.",
+      "V3 splits subject label exact matches (160), subject key matches (0, because the prompt shows subject_label) and display mismatches (10); V2's subject_label_matches was a combined label-or-key count (170). subject_key_resolved is 170.",
+      "V3 wraps every field in an evidence envelope with source_refs/rule_id/verification/limitations; V2 did not.",
+      "V3 writes atomically with a build-state file; V2 wrote sequentially."
+    ]
+  }
+}

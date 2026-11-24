@@ -1,0 +1,743 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/BlueOcean3214/graduation-audit-review/v3/historical-evidence.schema.json",
+  "title": "V3 historical evidence ledger row",
+  "description": "One row per frozen historical result. Every field is an evidence envelope; no envelope may be mistaken for a value recorded at generation time.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "builder_version",
+    "audit_locator",
+    "derived_batch_locator",
+    "segment",
+    "identity",
+    "source",
+    "prompt",
+    "plan",
+    "b0",
+    "audit",
+    "acceptance",
+    "fields"
+  ],
+  "properties": {
+    "schema": {
+      "const": "graduation-derived-field-evidence/v3"
+    },
+    "builder_version": {
+      "const": "3.0.0"
+    },
+    "audit_locator": {
+      "type": "string",
+      "pattern": "^runs/.+/results\\.jsonl:[0-9]+$",
+      "description": "External audit locator; never a run_id."
+    },
+    "derived_batch_locator": {
+      "type": "object",
+      "required": [
+        "state",
+        "value",
+        "is_original_run_id",
+        "basis"
+      ],
+      "properties": {
+        "state": {
+          "enum": [
+            "derived_identifier"
+          ]
+        },
+        "value": {
+          "type": "string"
+        },
+        "is_original_run_id": {
+          "const": false
+        },
+        "basis": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "segment": {
+      "enum": [
+        "main",
+        "supplementary-subject",
+        "supplementary-s7empty",
+        "b0-legacy"
+      ]
+    },
+    "identity": {
+      "type": "object",
+      "required": [
+        "experiment_id",
+        "sample_id",
+        "group",
+        "repeat_index"
+      ],
+      "properties": {
+        "experiment_id": {
+          "type": "string"
+        },
+        "sample_id": {
+          "type": "string"
+        },
+        "group": {
+          "type": "string"
+        },
+        "repeat_index": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "additionalProperties": false
+    },
+    "source": {
+      "type": "object",
+      "required": [
+        "repository",
+        "commit",
+        "result_file",
+        "line_number",
+        "experiment_id",
+        "sample_id",
+        "group",
+        "repeat_index",
+        "prompt_ref",
+        "prompt_sha256",
+        "record_sha256",
+        "original_field_presence"
+      ],
+      "properties": {
+        "repository": {
+          "type": "string",
+          "format": "uri"
+        },
+        "commit": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{40}$"
+        },
+        "result_file": {
+          "type": "string"
+        },
+        "line_number": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "experiment_id": {
+          "type": "string"
+        },
+        "sample_id": {
+          "type": "string"
+        },
+        "group": {
+          "type": "string"
+        },
+        "repeat_index": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "prompt_ref": {
+          "type": "string"
+        },
+        "prompt_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "record_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "original_field_presence": {
+          "type": "object",
+          "required": [
+            "run_id",
+            "base_sha",
+            "knowledge_result_ids",
+            "memory_injected",
+            "short_term_injected",
+            "difficult_flag",
+            "data_kind"
+          ],
+          "additionalProperties": {
+            "const": false
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "prompt": {
+      "type": "object",
+      "required": [
+        "file",
+        "sha256_recomputed",
+        "sha256_matches_record",
+        "user_chars_recomputed",
+        "prompt_chars_matches_record"
+      ],
+      "properties": {
+        "file": {
+          "type": "string"
+        },
+        "sha256_recomputed": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "sha256_matches_record": {
+          "const": true
+        },
+        "user_chars_recomputed": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "prompt_chars_matches_record": {
+          "const": true
+        }
+      },
+      "additionalProperties": true
+    },
+    "plan": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "description": "Null for B0 legacy; otherwise the bound plan evidence."
+    },
+    "b0": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "audit": {
+      "type": "object",
+      "required": [
+        "snapshot_repository",
+        "snapshot_commit",
+        "reviewed_source_repository",
+        "reviewed_source_commit",
+        "runtime_source_version_verified",
+        "audit_scope"
+      ],
+      "properties": {
+        "snapshot_repository": {
+          "type": "string"
+        },
+        "snapshot_commit": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{40}$"
+        },
+        "reviewed_source_repository": {
+          "type": "string"
+        },
+        "reviewed_source_commit": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{40}$"
+        },
+        "runtime_source_version_verified": {
+          "const": false
+        },
+        "audit_scope": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "acceptance": {
+      "type": "object",
+      "required": [
+        "original_contract_compliance",
+        "evidence_layer_integrity"
+      ],
+      "properties": {
+        "original_contract_compliance": {
+          "type": "object",
+          "required": [
+            "status",
+            "design_section",
+            "design_version",
+            "present_fields",
+            "missing_fields",
+            "reason"
+          ],
+          "properties": {
+            "status": {
+              "const": "FAIL"
+            },
+            "design_section": {
+              "const": "§7.1"
+            },
+            "design_version": {
+              "type": "string"
+            },
+            "present_fields": {
+              "type": "array",
+              "maxItems": 0
+            },
+            "missing_fields": {
+              "type": "array",
+              "minItems": 7,
+              "maxItems": 7
+            },
+            "reason": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": true
+        },
+        "evidence_layer_integrity": {
+          "type": "object",
+          "required": [
+            "status",
+            "checks"
+          ],
+          "properties": {
+            "status": {
+              "const": "PASS"
+            },
+            "checks": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "boolean"
+              }
+            }
+          },
+          "additionalProperties": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "fields": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "run_id",
+        "base_sha",
+        "knowledge_result_ids",
+        "memory_injected",
+        "short_term_injected",
+        "difficult_flag",
+        "data_kind"
+      ],
+      "properties": {
+        "run_id": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/envelope"
+            }
+          ],
+          "properties": {
+            "value": {
+              "type": "null"
+            },
+            "evidence_state": {
+              "const": "unrecoverable"
+            },
+            "verification": {
+              "const": "not_possible"
+            }
+          },
+          "required": [
+            "value",
+            "evidence_state",
+            "verification"
+          ]
+        },
+        "base_sha": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/envelope"
+            }
+          ],
+          "properties": {
+            "value": {
+              "type": "null"
+            },
+            "evidence_state": {
+              "const": "unrecoverable"
+            },
+            "runtime_base_sha": {
+              "type": "null"
+            },
+            "reviewed_source_commit": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{40}$"
+            },
+            "reviewed_source_commit_scope": {
+              "type": "string"
+            },
+            "runtime_source_version_verified": {
+              "const": false
+            },
+            "execution_report_baseline": {
+              "type": "string"
+            },
+            "execution_report_baseline_is_proof": {
+              "const": false
+            }
+          },
+          "required": [
+            "value",
+            "runtime_base_sha",
+            "reviewed_source_commit",
+            "runtime_source_version_verified",
+            "execution_report_baseline",
+            "execution_report_baseline_is_proof"
+          ]
+        },
+        "knowledge_result_ids": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/envelope"
+            }
+          ],
+          "properties": {
+            "value": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "scope": {
+              "type": "string"
+            },
+            "b0_prompt_only": {
+              "type": "boolean"
+            },
+            "config_knowledge_results": {
+              "type": "array"
+            },
+            "prompt_declares_no_knowledge_results": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "value",
+            "scope",
+            "b0_prompt_only"
+          ]
+        },
+        "memory_injected": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/envelope"
+            }
+          ],
+          "properties": {
+            "value": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/memoryFlat"
+              }
+            },
+            "entries": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/memoryEntry"
+              }
+            },
+            "section_5_6_6_status": {
+              "const": "NOT_COMPLETED"
+            },
+            "injected_json_reference_present": {
+              "const": false
+            },
+            "source_entry_count": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "statistics": {
+              "type": "object"
+            }
+          },
+          "required": [
+            "value",
+            "entries",
+            "section_5_6_6_status",
+            "injected_json_reference_present",
+            "source_entry_count"
+          ]
+        },
+        "short_term_injected": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/envelope"
+            }
+          ],
+          "properties": {
+            "value": {
+              "type": "object",
+              "required": [
+                "short_term_slot_enabled",
+                "short_term_block_present",
+                "short_term_feedback_history_present",
+                "short_term_injected"
+              ],
+              "properties": {
+                "short_term_slot_enabled": {
+                  "type": "boolean"
+                },
+                "short_term_block_present": {
+                  "type": "boolean"
+                },
+                "short_term_feedback_history_present": {
+                  "type": "boolean"
+                },
+                "short_term_injected": {
+                  "type": "null"
+                }
+              },
+              "additionalProperties": false
+            },
+            "predicates": {
+              "type": "object",
+              "required": [
+                "short_term_slot_enabled",
+                "short_term_block_present",
+                "short_term_feedback_history_present"
+              ],
+              "additionalProperties": {
+                "$ref": "#/$defs/envelope"
+              }
+            },
+            "frozen_field_compatibility": {
+              "type": "object",
+              "required": [
+                "original_field",
+                "v3_redefines_original_field",
+                "semantics_status",
+                "candidate_meanings",
+                "formal_run_requires_approved_semantics"
+              ],
+              "properties": {
+                "original_field": {
+                  "const": "short_term_injected"
+                },
+                "v3_redefines_original_field": {
+                  "const": false
+                },
+                "semantics_status": {
+                  "const": "pending_advisor_confirmation"
+                },
+                "candidate_meanings": {
+                  "type": "array"
+                },
+                "formal_run_requires_approved_semantics": {
+                  "const": true
+                }
+              },
+              "additionalProperties": true
+            }
+          },
+          "required": [
+            "value",
+            "predicates",
+            "frozen_field_compatibility"
+          ]
+        },
+        "difficult_flag": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/envelope"
+            }
+          ],
+          "properties": {
+            "value": {
+              "type": "boolean"
+            },
+            "latest_feedback": {
+              "type": [
+                "object",
+                "null"
+              ]
+            },
+            "raw_condition_partial_and_reason": {
+              "type": "boolean"
+            },
+            "feedback_slot_enabled": {
+              "type": "boolean"
+            },
+            "b0_group_fixed_false": {
+              "type": "boolean"
+            },
+            "dynamic_rule_present_in_prompt": {
+              "type": "boolean"
+            },
+            "agree": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "value",
+            "raw_condition_partial_and_reason",
+            "feedback_slot_enabled",
+            "dynamic_rule_present_in_prompt",
+            "agree"
+          ]
+        },
+        "data_kind": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/envelope"
+            }
+          ],
+          "properties": {
+            "value": {
+              "enum": [
+                "simulated_learner_fixture",
+                "real_user_data"
+              ]
+            },
+            "sample_simulation_is_simulated": {
+              "type": "boolean"
+            },
+            "gold_simulation": {
+              "type": "boolean"
+            },
+            "seed_fixture_requires_is_simulated": {
+              "type": "boolean"
+            },
+            "original_sample_has_data_kind": {
+              "const": false
+            },
+            "sample_linked_to_prompt_request": {
+              "const": true
+            }
+          },
+          "required": [
+            "value",
+            "sample_simulation_is_simulated",
+            "gold_simulation",
+            "original_sample_has_data_kind",
+            "sample_linked_to_prompt_request"
+          ]
+        }
+      }
+    }
+  },
+  "$defs": {
+    "envelope": {
+      "type": "object",
+      "required": [
+        "value",
+        "evidence_state",
+        "original_field_present",
+        "source_refs",
+        "rule_id",
+        "rule_version",
+        "verification",
+        "limitations"
+      ],
+      "properties": {
+        "value": {},
+        "evidence_state": {
+          "enum": [
+            "recorded",
+            "externally_derived",
+            "partially_derived",
+            "inferred",
+            "gold_reference",
+            "unknown",
+            "conflicting",
+            "unrecoverable"
+          ]
+        },
+        "original_field_present": {
+          "type": "boolean"
+        },
+        "source_refs": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "rule_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "rule_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "verification": {
+          "enum": [
+            "verified",
+            "partially_verified",
+            "not_verified",
+            "not_possible",
+            "reference_only"
+          ]
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "memoryFlat": {
+      "type": "object",
+      "required": [
+        "memory_type",
+        "subject_key",
+        "strength",
+        "status"
+      ],
+      "properties": {
+        "memory_type": {
+          "type": "string"
+        },
+        "subject_key": {
+          "type": "string"
+        },
+        "strength": {
+          "type": "number"
+        },
+        "status": {
+          "type": "null"
+        }
+      },
+      "additionalProperties": false
+    },
+    "memoryEntry": {
+      "type": "object",
+      "required": [
+        "index",
+        "content",
+        "gold_ref",
+        "subfields"
+      ],
+      "properties": {
+        "index": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "content": {
+          "type": "string"
+        },
+        "gold_ref": {
+          "type": [
+            "object",
+            "null"
+          ]
+        },
+        "subfields": {
+          "type": "object",
+          "required": [
+            "content",
+            "memory_type",
+            "subject_key",
+            "strength",
+            "gold_status",
+            "memory_id",
+            "runtime_status"
+          ],
+          "additionalProperties": {
+            "$ref": "#/$defs/envelope"
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

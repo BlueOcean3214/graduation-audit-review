@@ -1,0 +1,10 @@
+{
+  "status": "success",
+  "builder_version": "3.0.0",
+  "started_at": "2026-11-24T09:16:15+00:00",
+  "outputs": {
+    "DERIVED-FIELD-EVIDENCE-V3.jsonl": "66c19540c4996df8b941fb44ee897232eb1a2b1c78c3fdfe0a6696861741ea25",
+    "DERIVED-FIELD-EVIDENCE-V3-STATS.json": "a01f5755c42cb733b343d15da7871246cc5e6caf730397ca961a4fcfc823396e"
+  },
+  "finished_at": "2026-11-24T09:16:15+00:00"
+}
