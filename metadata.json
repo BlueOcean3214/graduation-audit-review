@@ -1,0 +1,5 @@
+{
+  "name": "Graduation Audit Review Workbench",
+  "description": "Independent audit evidence ledger explorer, SHA-256 manifest verifier, and second-round review diagnostics for the 165 graduation experiment records.",
+  "requestFramePermissions": []
+}
